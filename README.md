@@ -11,9 +11,9 @@ The Doctor Recommendation System is designed to connect patients with the most s
 - **Intuitive Interface:** Built with Django, the system offers a smooth and user-friendly experience.
 
 ## 🚀 Tech Stack
-Data Scraping: Beautiful Soup and Selenium for data extraction from Oladoc.com  
-Machine Learning: Model trained on collected doctor data to match user requirements with doctor profiles.
-Backend Framework: Django provides a robust and scalable backend for handling user input and recommendation processing.
+Data Scraping: Beautiful Soup and Selenium for data extraction from Oladoc.com   
+Machine Learning: Model trained on collected doctor data to match user requirements with doctor profiles.  
+Backend Framework: Django provides a robust and scalable backend for handling user input and recommendation processing.  
 
 ## 🏗️ How It Works
 + **Data Collection:** Scraped data from Oladoc.com to collect detailed doctor profiles.
