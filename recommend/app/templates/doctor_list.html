@@ -1,0 +1,95 @@
+{% load static %} <!-- Add this line at the beginning of your template -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Doctors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: #1E90FF; /* Dark Blue */
+            color: #fff; /* White text */
+            text-align: center;
+            padding: 20px 0;
+            width: 100%; /* Full width */
+        }
+        header a {
+            text-decoration: none;
+            color: #fff; /* White */
+            font-weight: bold;
+        }
+        .admin-link {
+            float: right;
+            margin-right: 20px;
+        }
+        h2 {
+            color: #1E90FF; /* Dark Blue */
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .doctor-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%; /* Increased width */
+            margin: 50px auto;
+        }
+        .doctor {
+            width: calc(25% - 20px); /* Adjusted width for each doctor data */
+            margin-bottom: 20px;
+            border: 1px solid #1E90FF; /* Dark Blue */
+            border-radius: 8px;
+            padding: 10px;
+        }
+        .doctor-name {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="{% url 'admin:index' %}" target="_blank" class="admin-link">Admin Page</a>
+</header>
+<h2>Recommended Doctors</h2>
+
+<div class="doctor-info">
+    {% if doctors %}
+        {% for doctor in doctors %}
+        <div class="doctor">
+            <ul>
+                <li class="doctor-name">{{ doctor.name }}</li>
+                <li>Specialization: {{ doctor.specialization }}</li>
+                <li>Experience: {{ doctor.experience }} years</li>
+                <li>Fee: {{ doctor.fee }}Rs</li>
+                <li>Wait Time: {{ doctor.wait_time }}</li>
+                <li>Location: {{ doctor.location }}</li>
+                <li>Satisfaction Level: {{ doctor.satisfaction_level }}</li>
+            </ul>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No doctors found matching your criteria.</p>
+    {% endif %}
+</div>
+
+<footer>
+    &copy; 2024 Doctor Search
+</footer>
+
+</body>
+</html>
